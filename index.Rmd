@@ -9,6 +9,53 @@ output:
 
 
 
-## Project thoughts
+## Milestone 1 - Project thoughts
 
 I am interested in exploring data related to a social issue I care about or policy surrounding it. 
+
+
+## Milestone 2 - Data and Proposal 
+For my final project, I will be using the University of Gothenburg’s Quality of Government (QoG) Basic Dataset. My research question is whether government spending on education leads to higher levels of female political empowerment. I hypothesize that countries with higher education spending levels will lead to higher levels of female political empowerment. I theorize this because when a state prioritizes and invests in education, that leads to citizens, especially women, educated and passionate enough to get involved in politics and make their voices heard. Better schools and education shows a commitment to overall social development and improvement, including the empowerment of women in the political spheres. My two variables of interest are government spending on education (wdi_expedu variable in dataset) and the women's political empowerment index (Vdem_gender in dataset). I will compare countries with high education spendings womens political empowerment indexes to those with medium and low spending to compare. Which countries I will include/not include in my studies will be decided later on in my project timeline. If spending fluctuations align with empowerment indexes I will know my hypothesis is correct. For instance, high spending = high empowerment index, medium spending = medium empowerment index, and low spending = low empowerment index. If there is no clear relationship between these two factors then I know my hypothesis is disproved. 
+
+
+```{r}
+library(readr)
+library(tidyverse)
+```
+
+```{r}
+my_data <- read_csv("data/qog_bas_cs_jan26 (1).csv")
+```
+
+```{r}
+glimpse(my_data)
+```
+
+
+## Milestone 3 - One data visualization (organized table and scatterblot)
+
+
+```{r}
+plotting_data <- my_data |>
+select(cname, wdi_expedu, vdem_gender) |>
+  na.omit()
+plotting_data
+```
+
+
+```{r}
+  ggplot(data = plotting_data) +
+  aes(x = wdi_expedu, y = vdem_gender) +
+  geom_point() + geom_smooth(method = "lm") +
+   labs(x = "Government Spending on Education",
+       y = "Womens Political Empowerment Index",
+       title = "Government Spending and Womens Political Empowerment",
+       source = "University of Gothenburg, 2026")
+```
+
+
+
+
+
+
+
