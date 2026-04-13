@@ -28,12 +28,9 @@ library(tidyverse)
 my_data <- read_csv("data/qog_bas_cs_jan26 (1).csv")
 ```
 
-```{r}
-glimpse(my_data)
-```
 
 
-## Milestone 3 - One data visualization (organized table and scatterblot)
+## Milestone 3 - One data visualization (organized table and scatter plot)
 
 
 ```{r}
@@ -47,14 +44,28 @@ plotting_data
 ```{r}
   ggplot(data = plotting_data) +
   aes(x = wdi_expedu, y = vdem_gender) +
-  geom_point() + geom_smooth(method = "lm") +
+  geom_point() +
    labs(x = "Government Spending on Education",
        y = "Womens Political Empowerment Index",
        title = "Government Spending and Womens Political Empowerment",
        source = "University of Gothenburg, 2026")
 ```
 
+## Milestone 4 - Analysis of Results
+The above tibble and scatter plot from milestone 3 show the distribution of the University of Gothenberg's 2026 data set between a countries government spending on education and their womens political empowerment index. The scatter plot below includes a second visual analysis, this time with a regression line, indicating the relationship between the two variables.  
 
+The scatter plot shows that as a countries spending on education increases, so does there womens political empowerment index. 
+
+
+```{r}
+  ggplot(data = plotting_data) +
+  aes(x = wdi_expedu, y = vdem_gender) +
+  geom_point() + geom_smooth(method = "lm") +
+   labs(x = "Government Spending on Education",
+       y = "Womens Political Empowerment Index",
+       title = "Government Spending and Womens Political Empowerment",
+       source = "University of Gothenburg, 2026")
+```
 
 
 
