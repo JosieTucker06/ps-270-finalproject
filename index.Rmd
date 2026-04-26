@@ -66,8 +66,18 @@ The scatter plot shows that as a countries spending on education increases, so d
        title = "Government Spending and Womens Political Empowerment",
        source = "University of Gothenburg, 2026")
 ```
+Statistical Regression Analysis: 
 
 
+```{r}
+model <- lm(vdem_gender ~ wdi_expedu, data = plotting_data)
+summary(model)
+```
 
+These results demonstrate a statistically significant positive relationship between a countries spending on education and the womens empowerment index of the country. The p-value of 0.00006127 is much smaller than an alpha level of 0.05, meaning that the likelihood this positive relationship between the two variables happened by chance is very small. 
+
+Furthermore, the coefficient of 0.0287 indicates that as a countries spending on education increases by 1 unit, we would expect their women's empowerment index to correspondingly increase by approximately 0.03 units. 
+
+Finally, the multiple R-squared variable, of 0.09 indicates that spending on education accounts for around 10% of the variation in countries womens empowerment scores. So while education spending does play a role in the scores, there are other factors also contributing to them that should be accounted for. 
 
 
