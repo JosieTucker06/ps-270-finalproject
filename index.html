@@ -1609,7 +1609,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" alt="" width="624" /></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Statistical Regression Analysis:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>vdem_gender</span> <span class='op'>~</span> <span class='va'>wdi_expedu</span>, data <span class='op'>=</span> <span class='va'>plotting_data</span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = vdem_gender ~ wdi_expedu, data = plotting_data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.50670 -0.08663  0.04532  0.11619  0.20402 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 0.632471   0.031590  20.021  &lt; 2e-16 ***
+wdi_expedu  0.028752   0.006976   4.122 6.13e-05 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.1567 on 154 degrees of freedom
+Multiple R-squared:  0.09935,   Adjusted R-squared:  0.0935 
+F-statistic: 16.99 on 1 and 154 DF,  p-value: 6.127e-05</code></pre>
+</div>
+<p>These results demonstrate a statistically significant positive relationship between a countries spending on education and the womens empowerment index of the country. The p-value of 0.00006127 is much smaller than an alpha level of 0.05, meaning that the likelihood this positive relationship between the two variables happened by chance is very small.</p>
+<p>Furthermore, the coefficient of 0.0287 indicates that as a countries spending on education increases by 1 unit, we would expect their women’s empowerment index to correspondingly increase by approximately 0.03 units.</p>
+<p>Finally, the multiple R-squared variable, of 0.09 indicates that spending on education accounts for around 10% of the variation in countries womens empowerment scores. So while education spending does play a role in the scores, there are other factors also contributing to them that should be accounted for.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

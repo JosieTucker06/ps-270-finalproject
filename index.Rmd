@@ -66,7 +66,7 @@ The scatter plot shows that as a countries spending on education increases, so d
        title = "Government Spending and Womens Political Empowerment",
        source = "University of Gothenburg, 2026")
 ```
-Statistical Regression Analysis: 
+**Statistical Regression Analysis:**
 
 
 ```{r}
