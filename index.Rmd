@@ -69,18 +69,22 @@ distribution
 ## Results
 
 
+
 ```{r echo = FALSE}
 tibble_data <- my_data |>
-select(cname, wdi_expedu, vdem_gender) |>
-  rename(
-    Country = cname, 
-    `Education Spending (% of GDP)` = wdi_expedu, 
-    `Empowerment Index` = vdem_gender
-  ) |>
+  select(cname, wdi_expedu, vdem_gender) |>
   na.omit()
-tibble_data
-```
 
+country_table <- tibble_data |>
+  head(15) |>
+  knitr::kable(
+    digits = 3,
+    col.names = c("Country", "Education Spending (% of GDP)", "Empowerment Index")  )
+
+country_table
+
+```
+(Table showing 15 out of 156 countries)
 
 
 

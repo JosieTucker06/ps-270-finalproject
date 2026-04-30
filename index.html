@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/qog_bas_cs_jan26 (1).csv","data/qog_bas_cs_jan26 (1).numbers","data/qog_bas_cs_jan26.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/print-code-1.png","index_files/figure-html5/print-code-2.png","index_files/figure-html5/print-code-3.png","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/figure-html5/unnamed-chunk-7-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/qog_bas_cs_jan26 (1).csv","data/qog_bas_cs_jan26 (1).numbers","data/qog_bas_cs_jan26.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/print-code-1.png","index_files/figure-html5/print-code-2.png","index_files/figure-html5/print-code-3.png","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/figure-html5/unnamed-chunk-7-1.png","index_files/figure-html5/unnamed-chunk-8-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1568,21 +1568,99 @@ The <strong>criteria for failing to reject the null hypothesis</strong> is if th
 </div>
 <h2 id="results">Results</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 156 × 3
-   Country    `Education Spending (% of GDP)` `Empowerment Index`
-   &lt;chr&gt;                                &lt;dbl&gt;               &lt;dbl&gt;
- 1 Albania                               2.73               0.901
- 2 Algeria                               4.75               0.613
- 3 Angola                                2.39               0.74 
- 4 Azerbaijan                            3.05               0.63 
- 5 Argentina                             4.79               0.851
- 6 Australia                             5.06               0.917
- 7 Austria                               5.28               0.919
- 8 Bahrain                               1.71               0.551
- 9 Bangladesh                            2.09               0.669
-10 Armenia                               2.49               0.884
-# ℹ 146 more rows</code></pre>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 37%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Country</th>
+<th style="text-align: right;">Education Spending (% of GDP)</th>
+<th style="text-align: right;">Empowerment Index</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Albania</td>
+<td style="text-align: right;">2.730</td>
+<td style="text-align: right;">0.901</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Algeria</td>
+<td style="text-align: right;">4.749</td>
+<td style="text-align: right;">0.613</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Angola</td>
+<td style="text-align: right;">2.385</td>
+<td style="text-align: right;">0.740</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Azerbaijan</td>
+<td style="text-align: right;">3.047</td>
+<td style="text-align: right;">0.630</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Argentina</td>
+<td style="text-align: right;">4.793</td>
+<td style="text-align: right;">0.851</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Australia</td>
+<td style="text-align: right;">5.059</td>
+<td style="text-align: right;">0.917</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Austria</td>
+<td style="text-align: right;">5.277</td>
+<td style="text-align: right;">0.919</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bahrain</td>
+<td style="text-align: right;">1.712</td>
+<td style="text-align: right;">0.551</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bangladesh</td>
+<td style="text-align: right;">2.085</td>
+<td style="text-align: right;">0.669</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Armenia</td>
+<td style="text-align: right;">2.492</td>
+<td style="text-align: right;">0.884</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Barbados</td>
+<td style="text-align: right;">4.140</td>
+<td style="text-align: right;">0.894</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Belgium</td>
+<td style="text-align: right;">6.278</td>
+<td style="text-align: right;">0.947</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bhutan</td>
+<td style="text-align: right;">7.470</td>
+<td style="text-align: right;">0.788</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bolivia (Plurinational State of)</td>
+<td style="text-align: right;">7.576</td>
+<td style="text-align: right;">0.818</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bosnia and Herzegovina</td>
+<td style="text-align: right;">2.970</td>
+<td style="text-align: right;">0.799</td>
+</tr>
+</tbody>
+</table>
 </div>
+<p>(Table showing 15 out of 156 countries)</p>
 <p><strong>Scatter Plot of Two Variables Relationship:</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="index_files/figure-html5/unnamed-chunk-6-1.png" alt="" width="624" /></p>
@@ -1680,14 +1758,17 @@ F-statistic: 16.99 on 1 and 154 DF,  p-value: 6.127e-05</code></pre>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span></span>
 <span><span class='va'>distribution</span></span>
 <span><span class='va'>tibble_data</span> <span class='op'>&lt;-</span> <span class='va'>my_data</span> <span class='op'>|&gt;</span></span>
-<span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>cname</span>, <span class='va'>wdi_expedu</span>, <span class='va'>vdem_gender</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span></span>
-<span>    Country <span class='op'>=</span> <span class='va'>cname</span>, </span>
-<span>    `Education Spending (% of GDP)` <span class='op'>=</span> <span class='va'>wdi_expedu</span>, </span>
-<span>    `Empowerment Index` <span class='op'>=</span> <span class='va'>vdem_gender</span></span>
-<span>  <span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>cname</span>, <span class='va'>wdi_expedu</span>, <span class='va'>vdem_gender</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='op'>)</span></span>
-<span><span class='va'>tibble_data</span></span>
+<span></span>
+<span><span class='va'>country_table</span> <span class='op'>&lt;-</span> <span class='va'>tibble_data</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fl'>15</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span></span>
+<span>    digits <span class='op'>=</span> <span class='fl'>3</span>,</span>
+<span>    col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Country"</span>, <span class='st'>"Education Spending (% of GDP)"</span>, <span class='st'>"Empowerment Index"</span><span class='op'>)</span>  <span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>country_table</span></span>
+<span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>plotting_data</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>wdi_expedu</span>, y <span class='op'>=</span> <span class='va'>vdem_gender</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
@@ -1711,7 +1792,7 @@ F-statistic: 16.99 on 1 and 154 DF,  p-value: 6.127e-05</code></pre>
 <span>  <span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
