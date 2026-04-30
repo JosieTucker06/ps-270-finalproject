@@ -81,3 +81,49 @@ Furthermore, the coefficient of 0.0287 indicates that as a countries spending on
 Finally, the multiple R-squared variable, of 0.09 indicates that spending on education accounts for around 10% of the variation in countries womens empowerment scores. So while education spending does play a role in the scores, there are other factors also contributing to them that should be accounted for. 
 
 
+## Final Report 
+
+**Introduction**
+
+Research Question: Does a countries government spending on education correlate with higher levels of female political empowerment?
+
+Hypothesis: My null hypothesis is that there IS NO statistically significant positive relationship between government spending on education and the women's political empowerment index. My alternative hypothesis is that there IS a statistically significant positive relationship between government spending on education and the women's political empowerment index. 
+
+I predict?
+
+Significance: This research question holds significance as it provides insight to a factor that potentially enables or holds back women from feeling empowered politically in their countries. In efforts to close the gender gap in politics and international relations, focusing on potential driving factors like education allow for structural, policy based changes that will lead to real impact. Furthermore, this topic is just generally interesting to see if there is a correlation between these two factors, and if having more well-funded education systems leads to women feeling more empowered to participate in politics. 
+
+
+**Data**
+
+This data is sourced from the University of Gothenberg's Quality of Government (GoQ) Basic Dataset (2026) on 156 different countries. The **predictor variable** is the countries Government Spending on Education which is indicated by the wdi_expedu variable. This variable is calculated by the countries total public expenditure on education as a percentage of the countries GDP. The **outcome variable** is the Women's Political Empowerment Index. This variable is measured on a 0-1 scale, and depicts female involvement in a variety of political spheres, activities, and institutions within the country. 
+
+The criteria for rejecting the null hypothesis is if the p-value is less than or equal to the alpha level of 0.05, and/or the coefficient is negative. 
+The criteria for failing to reject the null hypothesis is if the p-value is greater than the alpha level of 0.05, and the coefficient is positive. 
+
+This histogram plot shows the distribution of the Women's Political Empowerment Scores on the Index score of 0-1.  
+
+
+```{r, echo=false}
+ggplot(data = plotting_data) +
+  aes(x = vdem_gender) +
+  geom_histogram(binwidth = 0.05, fill = "steelblue", color = "white") +
+  labs(
+    x = "Women's Political Empowerment Index (0-1)",
+    y = "Number of Countries",
+    title = "Distribution of Women's Political Empowerment Scores",
+    caption = "Source: University of Gothenburg QoG Basic Dataset (2026)"
+  ) +
+  theme_minimal()
+```
+
+
+
+
+
+
+```{r print-code, ref.label=knitr::all_labels(), echo = TRUE, echo=FALSE}
+
+```
+
+
