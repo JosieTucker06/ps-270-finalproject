@@ -1668,7 +1668,7 @@ F-statistic: 16.99 on 1 and 154 DF,  p-value: 6.127e-05</code></pre>
 <span><span class='va'>plotting_data</span> <span class='op'>&lt;-</span> <span class='va'>my_data</span> <span class='op'>|&gt;</span></span>
 <span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>cname</span>, <span class='va'>wdi_expedu</span>, <span class='va'>vdem_gender</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='op'>)</span></span>
-<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>plotting_data</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span><span class='va'>distribution</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>plotting_data</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>vdem_gender</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>binwidth <span class='op'>=</span> <span class='fl'>0.05</span>, fill <span class='op'>=</span> <span class='st'>"steelblue"</span>, color <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
@@ -1678,6 +1678,7 @@ F-statistic: 16.99 on 1 and 154 DF,  p-value: 6.127e-05</code></pre>
 <span>    caption <span class='op'>=</span> <span class='st'>"Source: University of Gothenburg QoG Basic Dataset (2026)"</span></span>
 <span>  <span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span><span class='va'>distribution</span></span>
 <span><span class='va'>tibble_data</span> <span class='op'>&lt;-</span> <span class='va'>my_data</span> <span class='op'>|&gt;</span></span>
 <span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>cname</span>, <span class='va'>wdi_expedu</span>, <span class='va'>vdem_gender</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span></span>

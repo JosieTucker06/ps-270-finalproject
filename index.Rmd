@@ -52,7 +52,7 @@ This histogram plot shows the distribution of the Women's Political Empowerment 
 
 
 ```{r echo = FALSE}
-ggplot(data = plotting_data) +
+distribution <- ggplot(data = plotting_data) +
   aes(x = vdem_gender) +
   geom_histogram(binwidth = 0.05, fill = "steelblue", color = "white") +
   labs(
@@ -62,6 +62,7 @@ ggplot(data = plotting_data) +
     caption = "Source: University of Gothenburg QoG Basic Dataset (2026)"
   ) +
   theme_minimal()
+distribution
 ```
 
 
