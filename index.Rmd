@@ -1,7 +1,7 @@
 ---
 title: "PS270 Final Project"
 author: "Josie Tucker"
-description: "My final project"
+description: "My final project, 4/29/26"
 output:
   distill::distill_article:
     self_contained: false
@@ -9,102 +9,49 @@ output:
 
 
 
-
-## Milestone 1 - Project thoughts
-
-I am interested in exploring data related to a social issue I care about or policy surrounding it. 
-
-
-## Milestone 2 - Data and Proposal 
-For my final project, I will be using the University of Gothenburg’s Quality of Government (QoG) Basic Dataset. My research question is whether government spending on education leads to higher levels of female political empowerment. I hypothesize that countries with higher education spending levels will lead to higher levels of female political empowerment. I theorize this because when a state prioritizes and invests in education, that leads to citizens, especially women, educated and passionate enough to get involved in politics and make their voices heard. Better schools and education shows a commitment to overall social development and improvement, including the empowerment of women in the political spheres. My two variables of interest are government spending on education (wdi_expedu variable in dataset) and the women's political empowerment index (Vdem_gender in dataset). I will compare countries with high education spendings womens political empowerment indexes to those with medium and low spending to compare. Which countries I will include/not include in my studies will be decided later on in my project timeline. If spending fluctuations align with empowerment indexes I will know my hypothesis is correct. For instance, high spending = high empowerment index, medium spending = medium empowerment index, and low spending = low empowerment index. If there is no clear relationship between these two factors then I know my hypothesis is disproved. 
-
-
-```{r}
+```{r echo = FALSE}
 library(readr)
 library(tidyverse)
+library(knitr)
+library(broom)
 ```
 
-```{r}
+```{r echo = FALSE}
 my_data <- read_csv("data/qog_bas_cs_jan26 (1).csv")
 ```
 
-
-
-## Milestone 3 - One data visualization (organized table and scatter plot)
-
-
-```{r}
+ 
+```{r echo = FALSE}
 plotting_data <- my_data |>
 select(cname, wdi_expedu, vdem_gender) |>
   na.omit()
-plotting_data
 ```
 
 
-```{r}
-  ggplot(data = plotting_data) +
-  aes(x = wdi_expedu, y = vdem_gender) +
-  geom_point() +
-   labs(x = "Government Spending on Education",
-       y = "Womens Political Empowerment Index",
-       title = "Government Spending and Womens Political Empowerment",
-       source = "University of Gothenburg, 2026")
-```
-
-## Milestone 4 - Analysis of Results
-The above tibble and scatter plot from milestone 3 show the distribution of the University of Gothenberg's 2026 data set between a countries government spending on education and their womens political empowerment index. The scatter plot below includes a second visual analysis, this time with a regression line, indicating the relationship between the two variables.  
-
-The scatter plot shows that as a countries spending on education increases, so does there womens political empowerment index. 
 
 
-```{r}
-  ggplot(data = plotting_data) +
-  aes(x = wdi_expedu, y = vdem_gender) +
-  geom_point() + geom_smooth(method = "lm") +
-   labs(x = "Government Spending on Education",
-       y = "Womens Political Empowerment Index",
-       title = "Government Spending and Womens Political Empowerment",
-       source = "University of Gothenburg, 2026")
-```
-**Statistical Regression Analysis:**
+## Introduction
+
+**Research Question:** Does a countries government spending on education correlate with higher levels of female political empowerment?
+
+**Hypothesis:** My null hypothesis is that there IS NO statistically significant positive relationship between government spending on education and the women's political empowerment index. My alternative hypothesis is that there IS a statistically significant positive relationship between government spending on education and the women's political empowerment index. 
+
+I predict that the data and results will show a statistically significant positive relationship between government spending on education and the women's political empowerment index scores. 
+
+**Significance:** This research question holds significance as it provides insight to a factor that potentially enables or holds back women from feeling empowered politically in their countries. In efforts to close the gender gap in politics and international relations, focusing on potential driving factors like education allow for structural, policy based changes that will lead to real impact. Furthermore, this topic is just generally interesting to see if there is a correlation between these two factors, and if having more well-funded education systems leads to women feeling more empowered to participate in politics. 
 
 
-```{r}
-model <- lm(vdem_gender ~ wdi_expedu, data = plotting_data)
-summary(model)
-```
+## Data
 
-These results demonstrate a statistically significant positive relationship between a countries spending on education and the womens empowerment index of the country. The p-value of 0.00006127 is much smaller than an alpha level of 0.05, meaning that the likelihood this positive relationship between the two variables happened by chance is very small. 
+This data is sourced from the University of Gothenberg's Quality of Government (GoQ) Basic Dataset (2026) on 156 different countries. The **predictor variable** is the countries Government Spending on Education which is indicated by the wdi_expedu variable. This variable is calculated by the countries total public expenditure on education as a percentage of the countries GDP. The **outcome variable** is the Women's Political Empowerment Index, indicated by the . This variable is measured on a 0-1 scale, and depicts female involvement in a variety of political spheres, activities, and institutions within the country. 
 
-Furthermore, the coefficient of 0.0287 indicates that as a countries spending on education increases by 1 unit, we would expect their women's empowerment index to correspondingly increase by approximately 0.03 units. 
-
-Finally, the multiple R-squared variable, of 0.09 indicates that spending on education accounts for around 10% of the variation in countries womens empowerment scores. So while education spending does play a role in the scores, there are other factors also contributing to them that should be accounted for. 
-
-
-## Final Report 
-
-**Introduction**
-
-Research Question: Does a countries government spending on education correlate with higher levels of female political empowerment?
-
-Hypothesis: My null hypothesis is that there IS NO statistically significant positive relationship between government spending on education and the women's political empowerment index. My alternative hypothesis is that there IS a statistically significant positive relationship between government spending on education and the women's political empowerment index. 
-
-I predict?
-
-Significance: This research question holds significance as it provides insight to a factor that potentially enables or holds back women from feeling empowered politically in their countries. In efforts to close the gender gap in politics and international relations, focusing on potential driving factors like education allow for structural, policy based changes that will lead to real impact. Furthermore, this topic is just generally interesting to see if there is a correlation between these two factors, and if having more well-funded education systems leads to women feeling more empowered to participate in politics. 
-
-
-**Data**
-
-This data is sourced from the University of Gothenberg's Quality of Government (GoQ) Basic Dataset (2026) on 156 different countries. The **predictor variable** is the countries Government Spending on Education which is indicated by the wdi_expedu variable. This variable is calculated by the countries total public expenditure on education as a percentage of the countries GDP. The **outcome variable** is the Women's Political Empowerment Index. This variable is measured on a 0-1 scale, and depicts female involvement in a variety of political spheres, activities, and institutions within the country. 
-
-The criteria for rejecting the null hypothesis is if the p-value is less than or equal to the alpha level of 0.05, and/or the coefficient is negative. 
-The criteria for failing to reject the null hypothesis is if the p-value is greater than the alpha level of 0.05, and the coefficient is positive. 
+The **criteria for rejecting the null hypothesis** is if the p-value is less than or equal to the alpha level of 0.05, and/or the coefficient is negative. 
+The **criteria for failing to reject the null hypothesis** is if the p-value is greater than the alpha level of 0.05, and the coefficient is positive. 
 
 This histogram plot shows the distribution of the Women's Political Empowerment Scores on the Index score of 0-1.  
 
 
-```{r, echo=false}
+```{r echo = FALSE}
 ggplot(data = plotting_data) +
   aes(x = vdem_gender) +
   geom_histogram(binwidth = 0.05, fill = "steelblue", color = "white") +
@@ -118,12 +65,122 @@ ggplot(data = plotting_data) +
 ```
 
 
+## Results
 
 
-
-
-```{r print-code, ref.label=knitr::all_labels(), echo = TRUE, echo=FALSE}
-
+```{r echo = FALSE}
+tibble_data <- my_data |>
+select(cname, wdi_expedu, vdem_gender) |>
+  rename(
+    Country = cname, 
+    `Education Spending (% of GDP)` = wdi_expedu, 
+    `Empowerment Index` = vdem_gender
+  ) |>
+  na.omit()
+tibble_data
 ```
 
+
+
+
+
+**Scatter Plot of Two Variables Relationship:**
+
+```{r echo = FALSE}
+  ggplot(data = plotting_data) +
+  aes(x = wdi_expedu, y = vdem_gender) +
+  geom_point() +
+   labs(x = "Government Spending on Education",
+       y = "Womens Political Empowerment Index",
+       title = "Government Spending and Womens Political Empowerment",
+       source = "University of Gothenburg, 2026")
+```
+**Scatter Plot with Regression:**
+
+
+```{r echo = FALSE}
+  ggplot(data = plotting_data) +
+  aes(x = wdi_expedu, y = vdem_gender) +
+  geom_point() + geom_smooth(method = "lm") +
+   labs(x = "Government Spending on Education",
+       y = "Womens Political Empowerment Index",
+       title = "Gov. Spending and Womens Political Empowerment With Regression",
+       source = "University of Gothenburg, 2026")
+```
+
+
+**Interpretation**: 
+
+The above plots and tables show the distribution of the University of Gothenberg's 2026 data set between a countries government spending on education and their women's political empowerment index. The second scatter plot includes a further visual analysis, with a regression line included, demonstrating the positive relationship between the two variables with the blue line. 
+
+
+
+
+
+
+
+**Statistical Regression:**
+
+
+
+```{r echo = FALSE}
+model <- lm(vdem_gender ~ wdi_expedu, data = plotting_data)
+summary(model)
+```
+
+
+
+
+```{r echo = FALSE}
+tidy(model) |> 
+  knitr::kable(
+    digits = 3, 
+    col.names = c("Term", "Estimate", "Std. Error", "t-statistic", "p-value")
+  )
+```
+
+
+
+**Interpretation and Evaluation**:
+
+These results demonstrate a statistically significant positive relationship between a countries spending on education and the women's empowerment index of the country. The **p-value of 0.00006127** (rounded down to 0) is much smaller than the alpha level of 0.05, meaning that the likelihood this positive relationship between the two variables happened by chance is very small. 
+
+Furthermore, the **positive coefficient of 0.0287** indicates that as a countries spending on education increases by 1 unit, we would expect their women's empowerment index to correspondingly increase by approximately 0.03 units. While this might seem small, 0.03 units on a scale of 0-1 could have real-world policy related implications regarding spending on education. 
+
+Finally, the **multiple R-squared variable of 0.099** indicates that spending on education accounts for around 10% of the variation in countries women's empowerment scores. So while education spending does play a role in the scores, there are other factors also contributing to them that should be accounted for. 
+
+
+These results allow us to conclude that there is strong statistical evidence of a positive correlation between government spending on education and that countries women's political empowerment index. However, this relationship is **not to be interpreted casually**, because this linear regression can not conclude that spending exclusively creates higher empowerment, only that the two variables are associated/correlated. 
+
+
+
+## Conclusion
+
+**Summary of Results**:
+
+These distributions and regression analysis show strong statistical support for rejecting the null hypothesis and supporting the alternative hypothesis that there is a statistically significant positive relationship between government education spending and the Women’s Political Empowerment Index. 
+
+
+**Assessment of Extent for Support for Hypothesis**:
+
+With a positive coefficient of 0.0287 and a p-value of 0.00006127 (well below the alpha level of 0.05) the data suggests that increased investment in education correlates with higher levels of female political empowerment, and allows us to reject the null hypothesis and support the alternative with high confidence. 
+
+
+**Limitations of the Analysis and Threats to Inference**:
+
+There are limitations to these results, and they should be interpreted solely as correlated and not casual. Possible confounding variables include factors such as a countries overall wealth or regime type (level of democratization). Furthermore, the lower r squared value of 0.099 means that education spending accounts for only approximately 10% of the variation in the women's political empowerment scores, meaning a lot of other factors account for 90% of the remaining variation. An example of these factors could be the social norms of a country, meaning how supported/allowed women are to be involved in politics or education. With more time and resources, this analysis could be improved by including multiple regressions that incorporate some of these control variables like regime type or gender equality levels to help isolate the impact of education spending. Finally, this data set from the University of Gothenburg only accounts for 156 countries, including the missing countries would add further information to these findings. All of these listed things should be considered when analyzing the real-world effects of government spending on women's political empowerment and potential policy changes.
+
+
+
+**AI Disclosure Statement**:
+
+I utilized artificial intelligence for a few different aspects of my final project. Firstly, for some of my more difficult/complex code chucks I had to partly rely on AI to produce the correct outcomes. Secondly, some error messages or issues knitting were occurring that I could not figure out how to solve. I used AI to help resolve these issues and successfully push the correct parts of my project to the website. Finally, I used AI to check over my written analysis and responses and make sure they were correctly interpreting my results. 
+
+
+
+**Code Printout**: 
+
+```{r print-code, ref.label=knitr::all_labels(), echo = TRUE, eval=FALSE}
+
+```
 
